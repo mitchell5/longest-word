@@ -6,7 +6,7 @@
 """
 from src.longest_word.game import Game
 class TestGame:
-""" Test class for our longest word game."""
+    """ Test class for our longest word game."""
 
     def test_game_initialization(self):
         """  Game grid should be 9 uppercased lettered list of words. """
@@ -42,5 +42,5 @@ class TestGame:
     def test_undefined_word_is_invalid(self):
         """A word that is not in the English dictionary should not be valid"""
         game = Game()
-        game.grid = list('KWIENFUQW')
-        assert game.is_valid("FEUN") is False
+        game.grid = list('BABYSITTER')
+        assert game.is_valid("BYB") is False
