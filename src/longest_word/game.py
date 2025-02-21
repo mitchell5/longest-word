@@ -7,6 +7,7 @@
 
 import random
 import string
+import requests
 
 class Game:
     """
@@ -56,4 +57,7 @@ class Game:
             if word.count(ch) > self.grid.count(ch):
                 return False
 
-        return True
+        response = requests.get("https://dictionary.lewagon.com/" + str(word))
+        result_dic = response.json()
+
+        return result_dic["found"]
